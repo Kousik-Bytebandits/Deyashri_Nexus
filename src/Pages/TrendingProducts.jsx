@@ -45,35 +45,37 @@ const products = [
 
 export default function TrendingProducts() {
   return (
-    <section className="px-6 py-10  bg-[#F2F5FF]">
-      {/* Heading */}
-      <h2 className="text-h2 font-semibold font-inter mb-8 text-gray-900">
-        Trending Products
-      </h2>
+    <section className="px-6 pb-10 bg-[#F2F5FF] pt-6">
+      <div className="w-full md:w-[90%] lg:w-[80%] mx-auto mt-16">
+        {/* Heading */}
+        <h2 className="text-h2 font-semibold font-inter mb-8 text-gray-900">
+          Trending Products
+        </h2>
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="relative group bg-[D9D9D9] p-2  rounded-xl shadow-md flex flex-col items-center transition-transform duration-500 hover:rotate-[-5deg] hover:scale-105"
-          >
-            {/* Default Image */}
-            <img
-              src={product.image}
-              alt={product.name}
-              className="object-contain transition-transform duration-500 group-hover:scale-0 group-hover:-rotate-45"
-            />
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="relative group bg-[D9D9D9] p-2 rounded-xl shadow-md flex flex-col items-center transition-transform duration-500 hover:rotate-[-5deg] hover:scale-105"
+            >
+              {/* Default Image */}
+              <img
+                src={product.image}
+                alt={product.name}
+                className="object-contain transition-transform duration-500 group-hover:scale-0 group-hover:-rotate-45"
+              />
 
-            {/* Hidden Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl opacity-0 rotate-[-45deg] transition-all duration-500 group-hover:opacity-100 group-hover:rotate-0">
-              <h3 className="text-h2 font-bold text-gray-800">{product.name}</h3>
-              <p className="text-h3 text-gray-600 mt-2 px-4 text-center">
-                {product.description}
-              </p>
+              {/* Hidden Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl opacity-0 rotate-[-45deg] transition-all duration-500 group-hover:opacity-100 group-hover:rotate-0">
+                <h3 className="text-h2 font-bold text-gray-800">{product.name}</h3>
+                <p className="text-h3 text-gray-600 mt-2 px-4 text-center">
+                  {product.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
